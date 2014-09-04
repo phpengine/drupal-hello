@@ -21,6 +21,6 @@ Here's how I set up Phlagrant
    dapperstrano dapperfy drupal-phlagrant --yes --guess --environment-name=phlagrant-host
 
 4) we run flirtify at the end of our fyers, we now piped into the phlagrant cm file which dapper install to run
-   phlagrant flirt default-cleo-dapper --yes --guess
+   phlagrant flirt default-cleo-dapper --yes
 
 5) bring up the box - we run the cleo provision standalone server cm (phlagrant cleofy should be based on this)
