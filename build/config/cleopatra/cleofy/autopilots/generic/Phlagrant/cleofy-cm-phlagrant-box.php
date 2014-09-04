@@ -24,6 +24,10 @@ class AutoPilotConfigured extends AutoPilot {
                     "install-user-name" => "phlagrant"
                 ),),),
 
+                // PHP Modules
+                array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure our common PHP Modules are installed" ),),),
+                array ( "PHPModules" => array( "ensure" => array(),),),
+
                 // All Pharoes
                 array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure Cleopatra" ),),),
                 array ( "Cleopatra" => array( "ensure" => array(),),),
@@ -31,6 +35,14 @@ class AutoPilotConfigured extends AutoPilot {
                 array ( "Dapperstrano" => array( "ensure" => array(),),),
                 array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure Testingkamen" ),),),
                 array ( "Testingkamen" => array( "ensure" => array(),),),
+
+                // Apache
+                array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure Apache Server is installed" ),),),
+                array ( "ApacheServer" => array( "ensure" =>  array("version" => "2.2"), ), ),
+
+                // Apache Modules
+                array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure our common Apache Modules are installed" ),),),
+                array ( "ApacheModules" => array( "ensure" => array(),),),
 
                 // Standard Tools
                 array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure some standard tools are installed" ),),),
@@ -44,17 +56,15 @@ class AutoPilotConfigured extends AutoPilot {
                 array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure Git SSH Key Safe version is are installed" ),),),
                 array ( "GitKeySafe" => array( "ensure" => array(),),),
 
-                // PHP Modules
-                array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure our common PHP Modules are installed" ),),),
-                array ( "PHPModules" => array( "ensure" => array(),),),
+                /* BDD Testing */
 
-                // Apache
-                array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure Apache Server is installed" ),),),
-                array ( "ApacheServer" => array( "ensure" =>  array("version" => "2.2"), ), ),
+                // Selenium Server
+                array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure Selenium Server is installed"),),),
+                array ( "SeleniumServer" => array( "ensure" => array("guess" => true ),),),
 
-                // Apache Modules
-                array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure our common Apache Modules are installed" ),),),
-                array ( "ApacheModules" => array( "ensure" => array(),),),
+                // Behat
+                array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure Behat is installed"),),),
+                array ( "Behat" => array( "ensure" => array("guess" => true ),),),
 
                 // Restart Apache for new modules
                 array ( "Logging" => array( "log" => array( "log-message" => "Lets restart Apache for our PHP and Apache Modules" ),),),
@@ -62,6 +72,30 @@ class AutoPilotConfigured extends AutoPilot {
                     "guess" => true,
                     "command" => "dapperstrano apachecontrol restart --yes --guess",
                 ) ) ),
+
+                /* Package Managers */
+                array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure Pear is installed"),),),
+                array ( "Pear" => array( "ensure" => array("guess" => true ),),),
+
+
+                /* Build/CI Servers & Build Tools */
+
+                // Drush
+                array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure Drush for Drupal" ),),),
+                array ( "PackageManager" => array( "pkg-ensure" => array(
+                    "package-name" => "drush/drush",
+                    "packager-name" => "Pear",
+                    "pear-channel" => "pear.drush.org",
+                    "all-dependencies" => true
+                ), ),),
+
+                // Jenkins
+                array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure Jenkins is installed" ),),),
+                array ( "Jenkins" => array( "ensure" => array(),),),
+                array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure Jenkins PHP Plugins are installed"),),),
+                array ( "JenkinsPlugins" => array( "ensure" => array(),),),
+                array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure the Jenkins user can use Sudo without a Password"),),),
+                array ( "JenkinsSudoNoPass" => array( "ensure" => array(),),),
 
                 //Mysql
                 array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure Mysql Server is installed" ),),),
