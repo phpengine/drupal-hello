@@ -47,21 +47,21 @@ class Phlagrantfile extends PhlagrantfileBase {
                 "provisioner" => "PharaohTools",
                 "tool" => "dapperstrano",
                 "target" => "host",
-                "script" => getcwd()."//build/config/dapperstrano/dapperfy/autopilots/generated/phlagrant-host-phlagrant-host-install-host-file-entry.php"
+                "script" => getcwd()."/build/config/dapperstrano/dapperfy/autopilots/generated/phlagrant-host-phlagrant-host-install-host-file-entry.php"
             ) ;
         $this->config["vm"]["provision"][] =
             array(
                 "provisioner" => "PharaohTools",
                 "tool" => "dapperstrano",
                 "target" => "guest",
-                "script" => getcwd()."//build/config/dapperstrano/dapperfy/autopilots/generated/phlagrant-box-phlagrant-install-code-data.php"
+                "script" => getcwd()."/build/config/dapperstrano/dapperfy/autopilots/generated/phlagrant-box-phlagrant-install-code-data.php"
             ) ;
         $this->config["vm"]["provision_destroy_post"][] =
             array(
                 "provisioner" => "PharaohTools",
                 "tool" => "dapperstrano",
                 "target" => "host",
-                "script" => getcwd()."//build/config/dapperstrano/dapperfy/autopilots/generated/phlagrant-host-host-uninstall-host-file-entry.php"
+                "script" => getcwd()."/build/config/dapperstrano/dapperfy/autopilots/generated/phlagrant-host-phlagrant-host-uninstall-host-file-entry.php"
             ) ;
         $this->config["vm"]["post_up_message"] = "Your Phlagrant Box has been brought up. This guest was configured to be " .
             "provisioned by both Cleopatra and Dapperstrano, and the host also by Dapperstrano. Your application " .
