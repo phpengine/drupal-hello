@@ -24,10 +24,17 @@ class AutoPilotConfigured extends AutoPilot {
 
               array ( "Logging" => array( "log" => array( "log-message" => "Starting Dapperstrano Application Configuration of Virtual Machine Host"), ) ),
 
-              array ( "Logging" => array( "log" => array( "log-message" => "Create our host file entry for our local URL"), ) ),
+              array ( "Logging" => array( "log" => array( "log-message" => "Create our host file entry for our VM Drupal URL"), ) ),
               array ( "HostEditor" => array( "add" => array (
                   "guess" => true,
                   "host-name" => "www.drupal-hello.vm",
+                  "host-ip" => $this->getCurrentTargetFromPapyrus(),
+              ), ), ),
+
+              array ( "Logging" => array( "log" => array( "log-message" => "Create our host file entry for our VM Jenkins URL"), ) ),
+              array ( "HostEditor" => array( "add" => array (
+                  "guess" => true,
+                  "host-name" => "www.drupal-jenkins.vm",
                   "host-ip" => $this->getCurrentTargetFromPapyrus(),
               ), ), ),
 

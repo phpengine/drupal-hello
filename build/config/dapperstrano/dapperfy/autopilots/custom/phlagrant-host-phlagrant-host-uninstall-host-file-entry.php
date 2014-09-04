@@ -24,10 +24,15 @@ class AutoPilotConfigured extends AutoPilot {
 
               array ( "Logging" => array( "log" => array( "log-message" => "Starting Dapperstrano Application Configuration of Virtual Machine Host"), ) ),
 
-              array ( "Logging" => array( "log" => array( "log-message" => "Remove our host file entry for our local URL"), ) ),
+              array ( "Logging" => array( "log" => array( "log-message" => "Remove our host file entry for VM Drupal"), ) ),
               array ( "HostEditor" => array( "rm" => array (
                   "guess" => true,
                   "host-name" => "www.drupal-hello.vm",
+              ), ), ),
+              array ( "Logging" => array( "log" => array( "log-message" => "Remove our host file entry for VM Jenkins"), ) ),
+              array ( "HostEditor" => array( "rm" => array (
+                  "guess" => true,
+                  "host-name" => "www.drupal-jenkins.vm",
               ), ), ),
 
               array ( "Logging" => array( "log" => array( "log-message" => "Dapperstrano Application Configuration of Virtual Machine Host Complete", ), ), ),
