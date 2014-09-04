@@ -12,7 +12,7 @@ class Phlagrantfile extends PhlagrantfileBase {
 
     private function setConfig() {
         $this->setDefaultConfig();
-        $this->config["vm"]["gui_mode"] = "gui" ;
+        # $this->config["vm"]["gui_mode"] = "gui" ;
         $this->config["vm"]["box"] = "vanillaubuntu1204amd64" ;
         # Shared folder - This should map to the workstation environment vhost path parent...
         $this->config["vm"]["shared_folders"][] =
@@ -34,13 +34,6 @@ class Phlagrantfile extends PhlagrantfileBase {
                 "tool" => "shell",
                 "target" => "guest",
                 "default" => "CleopatraInit"
-            ) ;
-        $this->config["vm"]["provision"][] =
-            array(
-                "provisioner" => "PharaohTools",
-                "tool" => "cleopatra",
-                "target" => "host",
-                "script" => getcwd()."/build/config/cleopatra/cleofy/autopilots/generic/Phlagrant/cleofy-cm-phlagrant-host.php"
             ) ;
         $this->config["vm"]["provision"][] =
             array(
