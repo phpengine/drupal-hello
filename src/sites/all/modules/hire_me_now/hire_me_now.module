@@ -38,17 +38,22 @@ function hire_dave_now_block_info() {
  */
 function hire_dave_now_block_view($delta = '') {
     switch($delta){
-        case 'hire_dave_now':
-            $block['subject'] = t('Golden Contact Rock, Paper, Scissors');
+        case 'hire_dave_now_oop':
+            $block['subject'] = t('Some data from an OO Class');
             if(user_access('access content')){
-                require_once(dirname(__FILE__)."/"."AutoLoad.php");
-                require_once(dirname(__FILE__)."/"."Bootstrap.php");
-                ob_start();
-                $bootStrap = new \Core\RPSBootStrap();
-                $bootStrap->main();
-                $out = ob_get_clean();
-                $block['content'] = $out;
-            }
+                require_once(dirname(__FILE__)."/Libraries/HelloLib.php");
+                $hello = new HelloLib() ;
+                $word = $hello->sayHelloForMe() ;
+                $block['content'] = $word; }
+            break ;
+        case 'hire_dave_now_procedural':
+            $block['subject'] = t('A simple bit of data from a variable_get');
+            if(user_access('access content')){
+                require_once(dirname(__FILE__)."/Libraries/HelloLib.php");
+                $hello = new HelloLib() ;
+                $word = $hello->sayHelloForMe() ;
+                $block['content'] = $word; }
+            break ;
     }
     return $block;
 }
