@@ -1,9 +1,20 @@
-drupal-hello
+## drupal-hello
 ============
 
-Install Instructions:
+So, hello...
 
-Prerequesites: You'll need to be running Ubuntu 12-14 on your machine for this.
+Here we have an example of a tested, devopsy Drupal application for a testing, devopsy job application.
+Virtual Machine Management, Configuration Management, Automated application deployment, Infrastructure as Code,
+Selenium Configuration, Behat Configuration and Testing, PHPUnit configuration and testing...
+
+... all in a day's work... I prepared this for you guys today as a real world example of my Drupal Dev/DevOps
+Skills.
+
+
+# Install Instructions:
+------------
+
+Prerequisites: You'll need to be running Ubuntu 12-14 on your machine for this.
 
 1) # Install Git and PHP5 if you don't already have them
 sudo apt-get install -y php5 git
@@ -26,7 +37,6 @@ phlagrant up now
    http://www.drupal-jenkins.vm
 
 
-An example of tested, devopsy Drupal for a job application
 
 So, included is
 
