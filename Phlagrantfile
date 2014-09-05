@@ -56,6 +56,13 @@ class Phlagrantfile extends PhlagrantfileBase {
                 "target" => "guest",
                 "script" => getcwd()."/build/config/dapperstrano/dapperfy/autopilots/generated/phlagrant-box-phlagrant-install-code-data.php"
             ) ;
+        $this->config["vm"]["provision"][] =
+            array(
+                "provisioner" => "PharaohTools",
+                "tool" => "dapperstrano",
+                "target" => "guest",
+                "script" => getcwd()."/build/config/dapperstrano/dapperfy/autopilots/custom/phlagrant-box-jenkins-vhost.php"
+            ) ;
         $this->config["vm"]["provision_destroy_post"][] =
             array(
                 "provisioner" => "PharaohTools",
