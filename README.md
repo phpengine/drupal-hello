@@ -26,12 +26,13 @@ bash <(wget -qO- http://github.com/phpengine/drupal-hello/raw/master/capgemini-i
 
 Which will install Git and PHP5 if you don't already have them, Install Cleopatra Config Management, Clone this repo,
 change directory into it, use a Cleopatra autopilot file to install Dapperstrano, Phlagrant and Virtualbox,
-Then Install the Virtual Machine for this project and Configuration with Phlagrant.
+Then Install the Virtual Machine for this project and Configuration with Phlagrant. It will then bring up the Phlagrant
+box, run config management and install PHP, Apache, Selenium, Behat, PHPUnit, Jenkins, Jenkins Plugins, a Jenkins Build
+already configured to execute the tests, Virtual Hosts, Host Names. Everything will work out of the box after this. All
+a Managed, Reproducible, Infrastucture by (PHP) code Configuration.
 
-2) # That might take a while (30 minutes on my BT infinity), (it gets a base box, configures the Virtual Hardware, and
-     runs Config Management and application deployment provisioners - all PHP)
-   # ... but now you can browse the website...
-   # (as a bonus, unlike Vagrant this will also provision your host (hostname) for a nice URL)
+2) # That might take a while... 30 minutes on my BT infinity, about 2GB of software downloadss
+   # ... but now you can browse the website as a bonus, sthis will also provision your host (hostname) for a nice URL)
    http://www.drupal-hello.vm
 
 6) # And also browse a jenkins build, where you'll see executable tests in PHPUnit, Behat and Selenium. Hit Build Now
