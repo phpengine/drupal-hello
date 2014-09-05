@@ -23,22 +23,22 @@ Prerequisites: You'll need to be running Ubuntu between 12 and 14 on your machin
 1) # Install Git and PHP5 if you don't already have them
 sudo apt-get install -y php5 git
 
-1) # Install Cleopatra
+2) # Install Cleopatra
 git clone http://git.pharaoh-tools.com/git/phpengine/cleopatra.git && sudo php cleopatra/install-silent
 
-2) # Use a Cleopatra autopilot file to install Dapperstrano, Phlagrant and Virtualbox
+3) # Use a Cleopatra autopilot file to install Dapperstrano, Phlagrant and Virtualbox
 sudo cleopatra auto x --af="build/config/cleoptra/cleofy/custom/cm-workstation.php"
 
-3) # Install the Virtual Machine and Configuration with Phlagrant
+4) # Install the Virtual Machine and Configuration with Phlagrant
 phlagrant up now
 
-4) # That might take a while, (it gets a base box, configures the Virtual Hardware, and runs provisioners)
+5) # That might take a while, (it gets a base box, configures the Virtual Hardware, and runs provisioners)
    # ... but now you can browse the website...
    # (as a bonus, unlike Vagrant this will also provision your host (hostname) for a nice URL)
    http://www.drupal-hello.vm
 
-5) # And also browse a jenkins build, where you'll see executable tests in PHPUnit, Behat and Selenium. Hit Build Now
-   to have them executed. The associated software "should" be set up and working.
+6) # And also browse a jenkins build, where you'll see executable tests in PHPUnit, Behat and Selenium. Hit Build Now
+   to have them executed. The associated software, Behat, Selenium and PHPUnit "should" be set up and working.
    http://www.drupal-jenkins.vm
 
 
