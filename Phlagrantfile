@@ -63,9 +63,10 @@ class Phlagrantfile extends PhlagrantfileBase {
                 "target" => "host",
                 "script" => getcwd()."/build/config/dapperstrano/dapperfy/autopilots/custom/phlagrant-host-phlagrant-host-uninstall-host-file-entry.php"
             ) ;
-        $this->config["vm"]["post_up_message"] = "Your Phlagrant Box has been brought up. This guest was configured to be " .
+        $this->config["vm"]["post_up_message"] = "Hi Capgemini - Your Phlagrant Box has been brought up successfully (I hope :) )".
+            "This guest was configured to be " .
             "provisioned by both Cleopatra and Dapperstrano, and the host also by Dapperstrano. Your application " .
-            "should now be accessible by browser.";
+            "should now be accessible by browser - go to www.drupal-hello.m or go to www.cap-jenkins.vm to run some tests.";
     }
 
 }
