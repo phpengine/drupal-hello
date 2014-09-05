@@ -36,8 +36,8 @@ class AutoPilotConfigured extends AutoPilot {
               array ( "ApacheVHostEditor" => array( "add" => array (
                   "guess" => true,
                   "vhe-docroot" => "/var/www/drupal-hello/",
-                  "vhe-url" => "www.drupal-hello.vm",
-                  "vhe-ip-port" => "0.0.0.0",
+                  "vhe-url" => "www.drupal-jenkins.vm",
+                  "vhe-ip-port" => $this->getCurrentTargetFromPapyrusLocal(),
                   "vhe-vhost-dir" => "/etc/apache2/sites-available",
                   "vhe-template" => $this->getTemplate(),
               ), ), ),
@@ -51,25 +51,19 @@ class AutoPilotConfigured extends AutoPilot {
 
 	  }
 
+    protected function getCurrentTargetFromPapyrusLocal() {
+        $plf = file_get_contents("/var/www/drupal-hello/papyrusfilelocal") ;
+        $pfu = unserialize($plf) ;
+        if (is_array($pfu) && count($pfu)>0) {
+            return $pfu["target"] ; }
+        return null ;
+    }
+
 
     private function getTemplate() {
         $template =
             <<<'TEMPLATE'
            NameVirtualHost ****IP ADDRESS****:80
- <VirtualHost ****IP ADDRESS****:80>
-    ServerAdmin webmaster@localhost
- 	ServerName ****SERVER NAME****
- 	DocumentRoot ****WEB ROOT****src
- 	<Directory ****WEB ROOT****src>
- 		Options Indexes FollowSymLinks MultiViews
- 		AllowOverride All
- 		Order allow,deny
- 		allow from all
- 	</Directory>
-   ErrorLog /var/log/apache2/error.log
-   CustomLog /var/log/apache2/access.log combined
- </VirtualHost>
-
  <VirtualHost ****IP ADDRESS****:80>
     ServerAdmin webmaster@localhost
  	ServerName ****SERVER NAME****
