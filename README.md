@@ -22,14 +22,14 @@ Prerequisites: You'll need to be running Ubuntu between 12 and 14 on your machin
 
 1) Do this...
 
-wget https://github.com/phpengine/drupal-hello/raw/master/capgemini-install.sh | sh
+bash <(wget -qO- http://github.com/phpengine/drupal-hello/raw/master/capgemini-install.sh)
 
 Which will install Git and PHP5 if you don't already have them, Install Cleopatra Config Management, Clone this repo,
 change directory into it, use a Cleopatra autopilot file to install Dapperstrano, Phlagrant and Virtualbox,
 Then Install the Virtual Machine for this project and Configuration with Phlagrant.
 
-5) # That might take a while, (it gets a base box, configures the Virtual Hardware, and runs Config Management
-     and application deployment provisioners in PHP)
+2) # That might take a while (30 minutes on my BT infinity), (it gets a base box, configures the Virtual Hardware, and
+     runs Config Management and application deployment provisioners - all PHP)
    # ... but now you can browse the website...
    # (as a bonus, unlike Vagrant this will also provision your host (hostname) for a nice URL)
    http://www.drupal-hello.vm
