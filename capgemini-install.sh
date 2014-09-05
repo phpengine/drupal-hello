@@ -1,6 +1,6 @@
 #!/bin/sh
 sudo apt-get install -y php5 git
-git clone http://git.pharaoh-tools.com/git/phpengine/cleopatra.git
+git clone http://git.pharaohtools.com/git/phpengine/cleopatra.git
 sudo php cleopatra/install-silent
 cd /var/www
 git clone https://github.com/phpengine/drupal-hello && cd drupal-hello
