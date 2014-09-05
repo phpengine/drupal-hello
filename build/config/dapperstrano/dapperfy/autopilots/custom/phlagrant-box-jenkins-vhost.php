@@ -55,7 +55,7 @@ class AutoPilotConfigured extends AutoPilot {
         $plf = file_get_contents("/var/www/drupal-hello/papyrusfilelocal") ;
         $pfu = unserialize($plf) ;
         if (is_array($pfu) && count($pfu)>0) {
-            return $pfu["target"] ; }
+            return $pfu["phlagrant-box"]["target"] ; }
         return null ;
     }
 
