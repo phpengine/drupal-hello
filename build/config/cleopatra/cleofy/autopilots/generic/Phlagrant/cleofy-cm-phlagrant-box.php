@@ -44,6 +44,10 @@ class AutoPilotConfigured extends AutoPilot {
                 array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure our common Apache Modules are installed" ),),),
                 array ( "ApacheModules" => array( "ensure" => array(),),),
 
+                // Apache Modules
+                array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure our common Apache Modules are installed" ),),),
+                array ( "ApacheReverseProxyModules" => array( "ensure" => array(),),),
+
                 // Standard Tools
                 array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure some standard tools are installed" ),),),
                 array ( "StandardTools" => array( "ensure" => array(),),),
@@ -104,6 +108,20 @@ class AutoPilotConfigured extends AutoPilot {
                 array ( "JenkinsPlugins" => array( "ensure" => array(),),),
                 array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure the Jenkins user can use Sudo without a Password"),),),
                 array ( "JenkinsSudoNoPass" => array( "ensure" => array(),),),
+
+                // Bash script to create jenkins job
+                // ususlly would use a platform independent method, but time
+                array ( "Logging" => array( "log" => array( "log-message" => "Lets create our jenkins job"),),),
+                array ( "RunCommand" => array("install" => array(
+                    "guess" => true,
+                    "command" => 'sh /var/www/drupal-hello/build/config/jenkins/create_job.sh',
+                ),),),
+
+                array ( "Logging" => array( "log" => array( "log-message" => "Lets also restart Jenkins"),),),
+                array ( "RunCommand" => array("install" => array(
+                    "guess" => true,
+                    "command" => 'sudo service jenkins restart',
+                ),),),
 
                 //Mysql
                 array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure Mysql Server is installed" ),),),
