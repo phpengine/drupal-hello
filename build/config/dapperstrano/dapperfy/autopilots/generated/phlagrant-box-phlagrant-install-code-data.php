@@ -37,7 +37,7 @@ class AutoPilotConfigured extends AutoPilot {
                   "guess" => true,
                   "vhe-docroot" => "/var/www/drupal-hello/",
                   "vhe-url" => "www.drupal-hello.vm",
-                  "vhe-ip-port" => "0.0.0.0",
+                  "vhe-ip-port" => $this->getCurrentTargetFromPapyrusLocal(),
                   "vhe-vhost-dir" => "/etc/apache2/sites-available",
                   "vhe-template" => $this->getTemplate(),
               ), ), ),
@@ -133,6 +133,14 @@ class AutoPilotConfigured extends AutoPilot {
 TEMPLATE;
 
         return $template ;
+    }
+
+    protected function getCurrentTargetFromPapyrusLocal() {
+        $plf = file_get_contents("/var/www/drupal-hello/papyrusfilelocal") ;
+        $pfu = unserialize($plf) ;
+        if (is_array($pfu) && count($pfu)>0) {
+            return $pfu["phlagrant-box"]["target"] ; }
+        return null ;
     }
 
 
