@@ -13,6 +13,9 @@ Testing Skills.
 I could have gone further on the theming layer, but I thought that creating a template with correct structure should
 be okay for a quick example.
 
+Its not all perfect, there is one bug - that the Behat tests fail as they cant find selenium. It's the only bug in the stack
+and I'll hopefully fix it before you read this
+
 
 # Install Instructions:
 ------------
