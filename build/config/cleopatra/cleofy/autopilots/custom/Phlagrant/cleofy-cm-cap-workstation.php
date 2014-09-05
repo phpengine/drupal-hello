@@ -25,9 +25,11 @@ class AutoPilotConfigured extends AutoPilot {
                 array ( "Dapperstrano" => array( "ensure" => array(),),),
                 array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure Testingkamen" ),),),
                 array ( "Testingkamen" => array( "ensure" => array(),),),
+                array ( "Logging" => array( "log" => array( "log-message" => "Lets ensure Phlagrant" ),),),
+                array ( "Phlagrant" => array( "ensure" => array(),),),
 
                 array ( "Logging" => array( "log" => array(
-                    "log-message" => "Capgemmini worksaion done"
+                    "log-message" => "Capgemini workstation setup done"
                 ),),),
 
             );
