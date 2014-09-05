@@ -18,54 +18,35 @@ be okay for a quick example.
 ------------
 
 Prerequisites: You'll need to be running Ubuntu between 12 and 14 on your machine for this. I tried it on 12 and 14, it
-*should* be fine on 13 too.
+*should* be fine on 13 too. Your user should also have sudo privileges.
 
-1) # Install Git and PHP5 if you don't already have them
-sudo apt-get install -y php5 git
+1) Do this...
 
-2) # Install Cleopatra
-git clone http://git.pharaoh-tools.com/git/phpengine/cleopatra.git && sudo php cleopatra/install-silent
+wget https://github.com/phpengine/drupal-hello/raw/master/capgemini-install.sh | sh
 
-3) # Use a Cleopatra autopilot file to install Dapperstrano, Phlagrant and Virtualbox
-sudo cleopatra auto x --af="build/config/cleoptra/cleofy/custom/cm-workstation.php"
+Which will install Git and PHP5 if you don't already have them, Install Cleopatra Config Management, Clone this repo,
+change directory into it, use a Cleopatra autopilot file to install Dapperstrano, Phlagrant and Virtualbox,
+Then Install the Virtual Machine for this project and Configuration with Phlagrant.
 
-4) # Install the Virtual Machine and Configuration with Phlagrant
-phlagrant up now
-
-5) # That might take a while, (it gets a base box, configures the Virtual Hardware, and runs provisioners)
+5) # That might take a while, (it gets a base box, configures the Virtual Hardware, and runs Config Management
+     and application deployment provisioners in PHP)
    # ... but now you can browse the website...
    # (as a bonus, unlike Vagrant this will also provision your host (hostname) for a nice URL)
    http://www.drupal-hello.vm
 
 6) # And also browse a jenkins build, where you'll see executable tests in PHPUnit, Behat and Selenium. Hit Build Now
-   to have them executed. The associated software, Behat, Selenium and PHPUnit "should" be set up and working.
+   to have them executed. The associated software, Behat, Selenium and PHPUnit will be set up and working.
    http://www.drupal-jenkins.vm
 
+7) When you're done gracefully close the VM with
+   phlagrant halt now --fail-hard
+   phlagrant destroy now
+   to make sure the provisioning on your host machine is undone.
 
 # Login Instructions
 -------------
 
-There a single admin user included, that which is -
+There a single admin user included, which is -
 
 User: ishouldhiredave
 Pass: rightnow
-
-----------------
-
-Here's how I set up Phlagrant
-
-1) cleofy for phlagrant
-   cleopatra cleofy install-generic-autopilots --yes --guess --template-group=phlagrant
-
-2) create a phlagrant-box environment for dapperfying
-   cleopatra env-config config-default --yes --default-environment-name=phlagrant-box
-   cleopatra env-config config-default --yes --default-environment-name=phlagrant-host
-
-3) we should be able to also run a dapperfy-phlagrant which will autofill most fields.
-   dapperstrano dapperfy drupal-phlagrant --yes --guess --environment-name=phlagrant-box
-   dapperstrano dapperfy drupal-phlagrant --yes --guess --environment-name=phlagrant-host
-
-4) we run flirtify at the end of our fyers, we now piped into the phlagrant cm file which dapper install to run
-   phlagrant flirt default-cleo-dapper --yes
-
-5) bring up the box - we run the cleo provision standalone server cm (phlagrant cleofy should be based on this)
