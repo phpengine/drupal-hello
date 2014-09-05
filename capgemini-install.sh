@@ -1,3 +1,4 @@
+#!/bin/sh
 sudo apt-get install -y php5 git
 git clone http://git.pharaoh-tools.com/git/phpengine/cleopatra.git
 sudo php cleopatra/install-silent
